@@ -1,0 +1,34 @@
+<div class="card-holder">
+  Sample Board
+  <button class="btn btn-secondary" (click)="addListItem()">Add list</button>
+  <div class="grid-container" cdkDropList #litsItem="cdkDropList" [cdkDropListData]="totalLists" (cdkDropListDropped)="onDrop($event)">
+    <div *ngFor="let list of totalLists" class="card card-content" cdkDrag>
+      <div class="list-content">
+          {{ list.name }}
+        <button class="btn btn-danger" (click)="removeListItem(list.name)">Delete list</button>
+        <button class="btn btn-secondary" (click)="addCardToList(list.name)">Add card</button>
+        <div cdkDropList #cardList="cdkDropList" [cdkDropListData]="list.cards" (cdkDropListDropped)="onDropCard($event)">
+            <div *ngFor="let card of list.cards" class="listcard" cdkDrag>
+                <div class="card-content">
+                    {{card.title}}
+                    <button class="btn btn-danger" (click)="removeCardFromListCard(list.name,card.title)">Delete card</button>
+                </div>
+              <div class="form-group">
+                  <input type="text" placeholder="Description" class="form-control" id="comments" #comments="ngModel" [ngModel]="card.description"/>
+                  <input type="text" placeholder="Comment" class="form-control" id="comments" #comments="ngModel" [(ngModel)]="card.comment"/>
+              </div>
+              <div *ngIf="card.comments.length" class="comment">
+                Comments :
+              </div>
+              <li *ngFor="let comment of card.comments">
+                  {{comment}}
+              </li>
+              <div class="bottom-button">
+                  <button *ngIf="list.cards.length" class="btn btn-secondary" (click)="addCommentToCard(list.name,card.title,card.comment)">Add comment</button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

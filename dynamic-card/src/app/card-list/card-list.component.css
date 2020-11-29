@@ -1,0 +1,60 @@
+.card-holder{
+    height: 100%;
+    background-color: #f1f1f1;;
+    width: 90%;
+    margin: 2rem;
+    padding: 2rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 5px;
+  }
+
+.list-content{
+    margin: 1rem;
+  }
+
+.card-content{
+    padding-bottom: 0.5rem
+  }
+
+.bottom-button{
+    padding-bottom: 0.25rem
+}
+
+.comment{
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+  button{
+      float: right;
+      font-size: 0.6rem;
+      margin-left: 0.25rem;
+  }
+
+  li{
+    font-size: 0.9rem;
+  }
+
+.card.card-content {
+    margin: 4rem;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+    height: auto;
+    width: 19rem;
+    background-color:#fff;
+  }
+
+  .listcard {
+    margin: 1rem;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+    height: auto;
+    width: 15rem;
+    padding: 2rem;
+  }
+
+  .form-control{
+      margin: .5rem;
+  }
